@@ -33,7 +33,7 @@ const VoteRegistrationForm = () => {
   };
 
   return (
-    <Paper elevation={4} sx={{ maxWidth: 900, width: '100%', mx: 'auto', mt: 6, p: 4 }}>
+    <Paper elevation={4} sx={{ maxWidth: 1000, width: '100%', mx: 'auto', mt: 3, p: 4 }}>
       <form onSubmit={handleSubmit}>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>

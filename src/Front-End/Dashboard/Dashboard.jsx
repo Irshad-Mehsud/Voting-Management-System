@@ -4,6 +4,8 @@ import Sidebar from '../Sidebar/Sidebar';
 import VoteSummaryCards from './votessummary/VoteSummaryCards';
 import PolarChart from './chart/PolarChart';
 import VoteRegistrationForm from '../components/Registrationform';
+import VoteCasting from '../components/VoteCasting';
+import AdminProfile from '../components/AdminProfile';
 import './Dashboard.scss';
 
 const Dashboard = () => {
@@ -40,6 +42,20 @@ const Dashboard = () => {
             <>
               <h1 className="text-3xl font-bold mb-4 ml-10 text-rose-800">Vote Registration</h1>
               <VoteRegistrationForm />
+            </>
+          )}
+
+            {activeComponent === 'Vote Casting' && (
+            <>
+              <h1 className="text-3xl font-bold mb-4 ml-10 text-rose-800">Cast Your Vote</h1>
+             <VoteCasting />
+            </>
+          )}
+
+           {activeComponent === 'Profile' && (
+            <>
+              <h1 className="text-3xl font-bold mb-4 ml-10 text-rose-800">Cast Your Vote</h1>
+              <AdminProfile />
             </>
           )}
 
