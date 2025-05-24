@@ -6,6 +6,7 @@ import PolarChart from './chart/PolarChart';
 import VoteRegistrationForm from '../components/Registrationform';
 import VoteCasting from '../components/VoteCasting';
 import AdminProfile from '../components/AdminProfile';
+import Candidates from '../components/Candidates';
 import './Dashboard.scss';
 
 const Dashboard = () => {
@@ -40,24 +41,31 @@ const Dashboard = () => {
 
           {activeComponent === 'Register to Vote' && (
             <>
-              <h1 className="text-3xl font-bold mb-4 ml-10 text-rose-800">Vote Registration</h1>
+              <h1 className="text-4xl font-bold mb-4 ml-2 text-rose-800">Vote Registration</h1>
               <VoteRegistrationForm />
             </>
           )}
 
             {activeComponent === 'Vote Casting' && (
             <>
-              <h1 className="text-3xl font-bold mb-4 ml-10 text-rose-800">Cast Your Vote</h1>
+              <h1 className="text-4xl font-bold mb-4 ml-4 text-rose-800">Cast Your Vote</h1>
              <VoteCasting />
             </>
           )}
 
            {activeComponent === 'Profile' && (
             <>
-              <h1 className="text-3xl font-bold mb-4 ml-10 text-rose-800">Cast Your Vote</h1>
+              <h1 className="text-4xl font-bold mb-4 ml-10 text-rose-800">Admin Profile</h1>
               <AdminProfile />
             </>
           )}
+          {activeComponent === 'Candidate' && (
+            <>
+              <h1 className="text-4xl font-bold mb-4 ml-2 text-rose-800">Candidates</h1>
+             <Candidates />
+            </>
+          )}
+
 
           {/* Add more component views as needed */}
         </main>

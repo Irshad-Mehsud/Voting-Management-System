@@ -49,9 +49,9 @@ const AdminProfile = () => {
       sx={{
         maxWidth: 900,
         mx: 'auto',
-        mt: 6,
+        mt: 4,
         p: 5,
-        borderRadius: 5,
+        borderRadius: 1,
         backgroundColor: '#fefefe',
       }}
     >

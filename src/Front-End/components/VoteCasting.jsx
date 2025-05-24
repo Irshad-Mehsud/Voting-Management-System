@@ -64,7 +64,7 @@ const VoteCasting = () => {
         mx: 'auto',
         mt: 3,
         p: 5,
-        borderRadius: 3,
+        borderRadius: 1,
         boxShadow: '0 4px 20px rgba(229, 30, 99, 0.15)',
       }}
     >
