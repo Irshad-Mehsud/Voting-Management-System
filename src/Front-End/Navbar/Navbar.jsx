@@ -9,7 +9,7 @@ import Tooltip from '@mui/material/Tooltip';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
-import DarkLightSwitch from './Switch.jsx';
+import DarkLightSwitch from '../components/Switch.jsx';
 import { FaBars } from 'react-icons/fa';
 import { useMediaQuery } from '@mui/material';
 

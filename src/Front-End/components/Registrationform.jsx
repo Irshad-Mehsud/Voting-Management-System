@@ -34,6 +34,14 @@ const VoteRegistrationForm = () => {
 
   return (
     <Paper elevation={4} sx={{ maxWidth: 1000, width: '100%', mx: 'auto', mt: 3, p: 4 }}>
+      <Typography
+        variant="h4"
+        gutterBottom
+        sx={{ textAlign: 'center', fontWeight: 'bold', color: '#e51e63', mb: 3 }}
+      >
+        Voter Registration
+      </Typography>
+
       <form onSubmit={handleSubmit}>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
@@ -44,9 +52,7 @@ const VoteRegistrationForm = () => {
               onChange={handleChange}
               fullWidth
               required
-              sx={{
-                width: { xs: '100%', md: '400px' },
-              }}
+              sx={{ width: { xs: '100%', md: '400px' } }}
             />
           </Grid>
 
@@ -59,9 +65,7 @@ const VoteRegistrationForm = () => {
               onChange={handleChange}
               fullWidth
               required
-              sx={{
-                width: { xs: '100%', md: '400px' },
-              }}
+              sx={{ width: { xs: '100%', md: '400px' } }}
             />
           </Grid>
 
@@ -74,9 +78,7 @@ const VoteRegistrationForm = () => {
               onChange={handleChange}
               required
               placeholder="03XX-XXXXXXX"
-              sx={{
-                width: { xs: '100%', md: '400px' },
-              }}
+              sx={{ width: { xs: '100%', md: '400px' } }}
             />
           </Grid>
 
@@ -88,9 +90,7 @@ const VoteRegistrationForm = () => {
               onChange={handleChange}
               required
               placeholder="42101-1234567-1"
-              sx={{
-                width: { xs: '100%', md: '400px' },
-              }}
+              sx={{ width: { xs: '100%', md: '400px' } }}
             />
           </Grid>
 
@@ -101,9 +101,7 @@ const VoteRegistrationForm = () => {
               value={formData.voterId}
               onChange={handleChange}
               required
-              sx={{
-                width: { xs: '100%', md: '400px' },
-              }}
+              sx={{ width: { xs: '100%', md: '400px' } }}
             />
           </Grid>
 
@@ -116,9 +114,7 @@ const VoteRegistrationForm = () => {
               onChange={handleChange}
               required
               InputLabelProps={{ shrink: true }}
-              sx={{
-                width: { xs: '235px', md: '400px' },
-              }}
+              sx={{ width: { xs: '235px', md: '400px' } }}
             />
           </Grid>
 
@@ -130,9 +126,7 @@ const VoteRegistrationForm = () => {
               value={formData.gender}
               onChange={handleChange}
               required
-              sx={{
-                width: { xs: '235px', md: '400px' },
-              }}
+              sx={{ width: { xs: '235px', md: '400px' } }}
             >
               {genders.map((option) => (
                 <MenuItem key={option} value={option}>
@@ -150,9 +144,7 @@ const VoteRegistrationForm = () => {
               onChange={handleChange}
               required
               placeholder="e.g., NA-250 Karachi"
-              sx={{
-                width: { xs: '235px', md: '400px' },
-              }}
+              sx={{ width: { xs: '235px', md: '400px' } }}
             />
           </Grid>
 

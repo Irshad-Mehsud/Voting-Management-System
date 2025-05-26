@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   TextField,
@@ -12,6 +12,7 @@ import {
   FormControl,
   FormLabel,
 } from '@mui/material';
+import { useLocation } from 'react-router-dom';
 
 const mockRegisteredVoters = [
   { cnic: '42101-1234567-1', hasVoted: false },
@@ -30,6 +31,14 @@ const VoteCasting = () => {
   const [eligible, setEligible] = useState(false);
   const [selectedCandidate, setSelectedCandidate] = useState('');
   const [voteSuccess, setVoteSuccess] = useState(false);
+  const location = useLocation();
+  const partyFromRoute = location?.state?.selectedParty;
+
+  useEffect(() => {
+    if (partyFromRoute) {
+      setSelectedCandidate(partyFromRoute.name); // Auto-select candidate based on route state
+    }
+  }, [partyFromRoute]);
 
   const handleVoteCheck = () => {
     const voter = mockRegisteredVoters.find(v => v.cnic === cnic);
@@ -68,18 +77,21 @@ const VoteCasting = () => {
         boxShadow: '0 4px 20px rgba(229, 30, 99, 0.15)',
       }}
     >
-    <Typography
-  sx={{ mb: 5 }}
-  align="center"
-  color="text.secondary"
->
-  Cast your vote for the upcoming elections. Please enter your CNIC to check eligibility.
-  <br />
-  <span style={{ color: '#e51e63', fontWeight: 600 }}>
-    Vote is the right of every citizen. Make your voice heard!
-  </span>
-</Typography>
+      <Typography
+        variant="h4"
+        align="center"
+        sx={{ mb: 4, fontWeight: 'bold', color: '#e51e63' }}
+      >
+        Vote Casting
+      </Typography>
 
+      <Typography sx={{ mb: 5 }} align="center" color="text.secondary">
+        Cast your vote for the upcoming elections. Please enter your CNIC to check eligibility.
+        <br />
+        <span style={{ color: '#e51e63', fontWeight: 600 }}>
+          Vote is the right of every citizen. Make your voice heard!
+        </span>
+      </Typography>
 
       <TextField
         label="Enter your CNIC"
@@ -134,15 +146,14 @@ const VoteCasting = () => {
 
           <Button
             variant="contained"
-            color="success"
             onClick={handleVoteSubmit}
             fullWidth
             sx={{
               py: 1.2,
               fontWeight: 'bold',
               fontSize: '1rem',
-            backgroundColor: '#e51e63',
-          '&:hover': { backgroundColor: '#d42d6d' },
+              backgroundColor: '#e51e63',
+              '&:hover': { backgroundColor: '#d42d6d' },
             }}
           >
             Submit Vote

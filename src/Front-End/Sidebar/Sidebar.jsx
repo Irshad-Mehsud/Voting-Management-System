@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   FaUser,
   FaChartBar,
@@ -9,14 +10,16 @@ import {
 } from 'react-icons/fa';
 import { MdHowToVote } from 'react-icons/md';
 
-const Sidebar = ({ setActiveComponent }) => {
+const Sidebar = () => {
+  const navigate = useNavigate();
+
   const menuItems = [
-    { label: 'Dashboard', icon: <FaChartBar size={30} /> },
-    { label: 'Profile', icon: <FaUser size={30} /> },
-    { label: 'Register to Vote', icon: <FaRegCheckCircle size={30} /> },
-    { label: 'Vote Casting', icon: <FaVoteYea size={30} /> },
-    { label: 'Candidate', icon: <FaUserTie size={30} /> },
-    { label: 'Election Symbol', icon: <MdHowToVote size={30} /> },
+    { label: 'Dashboard', icon: <FaChartBar size={30} />, path: '/' },
+    { label: 'Profile', icon: <FaUser size={30} />, path: '/profile' },
+    { label: 'Register to Vote', icon: <FaRegCheckCircle size={30} />, path: '/registration' },
+    { label: 'Vote Casting', icon: <FaVoteYea size={30} />, path: '/vote' },
+    { label: 'Candidate', icon: <FaUserTie size={30} />, path: '/candidates' },
+    { label: 'Election Symbol', icon: <MdHowToVote size={30} />, path: '/symbols' },
   ];
 
   return (
@@ -27,7 +30,7 @@ const Sidebar = ({ setActiveComponent }) => {
           {menuItems.map((item) => (
             <div
               key={item.label}
-              onClick={() => setActiveComponent(item.label)}
+              onClick={() => navigate(item.path)}
               className="flex items-center gap-3 px-4 py-2 bg-white hover:bg-rose-300 hover:text-white text-rose-800 font-medium rounded transition duration-300 cursor-pointer"
             >
               {item.icon}

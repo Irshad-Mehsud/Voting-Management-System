@@ -39,9 +39,14 @@ const candidates = [
 const CandidatesPage = () => {
   return (
     <>
+      {/* Page Heading */}
+
       {/* Smart Card wrapper */}
       <div className="bg-blue-50 border border-blue-200 rounded-[4px] p-6 shadow-lg">
-        <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
+           <h1 className="text-3xl font-bold text-center text-pink-600 mb-8">
+        Candidates List
+      </h1>
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {candidates.map((candidate) => (
             <div
               key={candidate.id}
